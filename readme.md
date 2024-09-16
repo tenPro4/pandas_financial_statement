@@ -1,0 +1,1 @@
+All the charts displayed in this project are referenced from my [Financial Statement Analysis tableau project](https://public.tableau.com/app/profile/hoo.weng.shang/viz/FinancialStatementAnalysis_17253808364160/Dashboard1).
