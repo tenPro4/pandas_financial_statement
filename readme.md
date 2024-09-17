@@ -287,12 +287,10 @@ ax = df_piv.iloc[:,:3].plot.bar(stacked=True,figsize=(12,6), color=custom_colors
 
 ax.plot(df_piv.index, df_piv['ceb'], color='slateblue', linewidth=2, marker='o', label='Cash or Equivalent Balance')
 
-# Add titles and labels
 plt.title('Cash Flow by Year/Quarter')
 plt.ylabel('Amount')
 plt.xlabel('')
 
-# Format the y-axis to display values in thousands (k)
 plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f'{x/1000:.0f}k'))
 
 cfo = Patch(label='Cash From Operating',color='deepskyblue')
