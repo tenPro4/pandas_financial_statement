@@ -11,7 +11,6 @@
   - [7. How is the company's cash flow performance?](#7-how-is-the-companys-cash-flow-performance)
   - [8. How does the company's balance sheet perform?](#8-how-does-the-companys-balance-sheet-perform)
   - [9. Is the company's operational capabilities outstanding?](#9-is-the-companys-operational-capabilities-outstanding)
-  - [9. Is the company's operational capabilities outstanding?](#9-is-the-companys-operational-capabilities-outstanding-1)
   - [10. Is the company's equity recommended to be held? (Informal recommendation)](#10-is-the-companys-equity-recommended-to-be-held-informal-recommendation)
 - [What I Learned](#what-i-learned)
 - [Challenges I Faced](#challenges-i-faced)
@@ -383,50 +382,6 @@ plt.show()
 
 **<h4>Result</h4>**
 ![debt_turnover](assets/9.png)
-
-**<h4>Insights</h4>**
-- The company's debt ratio has been steadily rising since 2023, aligning with the increase in total liabilities observed in Figure 8.
-- The total asset turnover ratio is trending downward, suggesting that the company is gradually scaling back its inventory-based business (POS) and shifting its focus toward e-services.
-
-## 9. Is the company's operational capabilities outstanding?
-
-Examining a company's asset and liability turnover ratios provides valuable insights into its operational efficiency and overall performance.
-
-View my notebook with detailed steps here: [9_debt_turnover](9_debt_turnover.ipynb).
-
-**<h4>Visualize Data</h4>**
-```python
-df_piv = df.pivot_table(
-    index='year_quater',
-    values=['dr', 'der', "tat"],
-    aggfunc='sum'
-)
-
-custom_colors = ['hotpink', 'orange', 'deepskyblue']
-
-ax = df_piv.plot(kind='line',style='--',figsize=(12,8),color=custom_colors)
-plt.grid(visible=True)
-plt.ylim(0,60)
-
-plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f'{x:.0f}%'))
-
-for column in df_piv.columns:
-    for x, y in enumerate(df_piv[column]):
-        ax.text(x, y, f'{y:.0f}%', fontsize=9, ha='center', va='top')
-
-tat = Patch(label='Total Assets Turnover',color='deepskyblue')
-der = Patch(label='Debt-to-Equity Ratio',color='hotpink')
-dr = Patch(label='Debt Ratio',color='orange')
-
-plt.xlabel("")
-plt.suptitle("Asset & Debt Turnover")
-
-plt.legend(handles=[tat,der,dr])
-plt.show()
-```
-
-**<h4>Result</h4>**
-![p_9](assets/9.png)
 
 **<h4>Insights</h4>**
 - The company's debt ratio has been steadily rising since 2023, aligning with the increase in total liabilities observed in Figure 8.
