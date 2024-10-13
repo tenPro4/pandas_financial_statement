@@ -1,7 +1,7 @@
 # Setup Project Environment
 
 1. Install conda by this [link](https://www.anaconda.com/download/)
-2. Once conda is installed, ensure the conda is set in your machine environment variable. For window, the default with me `C:\Users\username\anaconda3\Scripts`
+2. Once conda is installed, ensure the conda is set in your machine environment variable. For window, the default path with be `C:\Users\username\anaconda3\Scripts`
 3. Test your conda
 ```bash
 conda --version
